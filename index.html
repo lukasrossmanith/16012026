@@ -3,27 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>16012026</title>
+    <title>Tic Tac Toe Surprise</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="container">
-        <div id="card" class="card">
-            <h1>Will you be my Valentine?</h1>
-            <div class="buttons">
-                <button id="yesBtn" class="btn yes-btn">Yes</button>
-                <button id="noBtn" class="btn no-btn">No</button>
+        <!-- Tic Tac Toe Game -->
+        <div id="game-container" class="game-container">
+            <h1>Tic Tac Toe</h1>
+            <div id="board" class="board">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+            <p id="status-message">Your turn! (You are ❤️)</p>
+        </div>
+
+        <!-- Loss Message -->
+        <div id="loss-container" class="hidden">
+            <button class="btn loss-btn">Pech im Spiel, Glück in der Liebe!</button>
+        </div>
+
+        <!-- Carousel Section -->
+        <div id="carousel-container" class="carousel-container hidden">
+            <div id="carousel" class="carousel">
+                <img src="PHOTO-2026-02-28-22-10-02.jpg" alt="1" class="carousel-img">
+                <img src="PHOTO-2026-02-28-22-10-02 2.jpg" alt="2" class="carousel-img">
+                <img src="PHOTO-2026-02-28-22-10-02 3.jpg" alt="3" class="carousel-img">
+                <img src="PHOTO-2026-02-28-22-10-02 4.jpg" alt="4" class="carousel-img">
+                <img src="PHOTO-2026-02-28-22-10-06.jpg" alt="5" class="carousel-img">
             </div>
         </div>
 
-        <div id="surprise" class="surprise hidden">
-            <div id="heart" class="heart">❤️</div>
-            <div id="photo-container" class="photo-container hidden">
-                <img src="16012026.jpeg" alt="Us" id="final-photo">
-                <p class="love-message">Happy Valentine's Day!</p>
-            </div>
+        <!-- Final Reveal -->
+        <div id="reveal-container" class="reveal-container hidden">
+            <h1 class="message-row" id="row-1">HEY</h1>
+            <h1 class="message-row" id="row-2">HAB DICH LIEB</h1>
+            <h1 class="message-row" id="row-3">TSCHÜSS</h1>
         </div>
     </div>
 
