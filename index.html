@@ -1,56 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe Surprise</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-</head>
-<body>
-
-    <div class="container">
-        <!-- Tic Tac Toe Game -->
-        <div id="game-container" class="game-container">
-            <h1>Tic Tac Toe</h1>
-            <div id="board" class="board">
-                <div class="cell" data-index="0"></div>
-                <div class="cell" data-index="1"></div>
-                <div class="cell" data-index="2"></div>
-                <div class="cell" data-index="3"></div>
-                <div class="cell" data-index="4"></div>
-                <div class="cell" data-index="5"></div>
-                <div class="cell" data-index="6"></div>
-                <div class="cell" data-index="7"></div>
-                <div class="cell" data-index="8"></div>
-            </div>
-            <p id="status-message">Your turn! (You are ❤️)</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#170d16" />
+    <title>A little game for you</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main id="app">
+      <section class="screen login-screen is-active" id="login-screen" aria-labelledby="login-title">
+        <div class="glow glow-one"></div><div class="glow glow-two"></div>
+        <div class="login-card">
+          <form id="login-form" novalidate>
+            <label class="sr-only" for="password">Password</label>
+            <input id="password" name="password" type="password" inputmode="numeric" autocomplete="off" placeholder="Password" autofocus />
+            <p id="login-error" class="form-error" aria-live="polite"></p>
+            <button type="submit" aria-label="Unlock">→</button>
+          </form>
         </div>
-
-        <!-- Loss Message -->
-        <div id="loss-container" class="hidden">
-            <button class="btn loss-btn">Pech im Spiel, Glück in der Liebe!</button>
+      </section>
+      <section class="screen game-screen" id="game-screen" aria-label="Tic-tac-toe" hidden>
+        <div class="board" id="board" aria-label="Tic-tac-toe board" role="grid">
+          <button class="cell" type="button" role="gridcell" aria-label="Top left"></button>
+          <button class="cell" type="button" role="gridcell" aria-label="Top middle"></button>
+          <button class="cell" type="button" role="gridcell" aria-label="Top right"></button>
+          <button class="cell" type="button" role="gridcell" aria-label="Middle left"></button>
+          <button class="cell" type="button" role="gridcell" aria-label="Middle"></button>
+          <button class="cell" type="button" role="gridcell" aria-label="Middle right"></button>
+          <button class="cell" type="button" role="gridcell" aria-label="Bottom left"></button>
+          <button class="cell" type="button" role="gridcell" aria-label="Bottom middle"></button>
+          <button class="cell" type="button" role="gridcell" aria-label="Bottom right"></button>
         </div>
-
-        <!-- Carousel Section -->
-        <div id="carousel-container" class="carousel-container hidden">
-            <div id="carousel" class="carousel">
-                <img src="PHOTO-2026-02-28-22-10-02.jpg" alt="1" class="carousel-img">
-                <img src="PHOTO-2026-02-28-22-10-02 2.jpg" alt="2" class="carousel-img">
-                <img src="PHOTO-2026-02-28-22-10-02 3.jpg" alt="3" class="carousel-img">
-                <img src="PHOTO-2026-02-28-22-10-02 4.jpg" alt="4" class="carousel-img">
-                <img src="PHOTO-2026-02-28-22-10-06.jpg" alt="5" class="carousel-img">
-            </div>
+      </section>
+      <section class="screen reveal-screen" id="reveal-screen" aria-label="A special memory" hidden>
+        <div class="reveal-photo-wrap"><img id="reveal-photo" src="assets/intro.jpg" alt="A close-up portrait" /></div>
+      </section>
+      <section class="screen gallery-screen" id="gallery-screen" aria-labelledby="gallery-title" hidden>
+        <header class="gallery-header"><h2 id="gallery-title">I love you</h2></header>
+        <div class="carousel-stage" aria-label="Photo carousel"><div class="carousel" id="carousel"></div></div>
+        <div class="gallery-controls" aria-label="Carousel controls">
+          <button id="previous" type="button" aria-label="Previous photo" disabled>←</button>
+          <button id="next" type="button" aria-label="Next photo" disabled>→</button>
         </div>
-
-        <!-- Final Reveal -->
-        <div id="reveal-container" class="reveal-container hidden">
-            <h1 class="message-row" id="row-1">HEY</h1>
-            <h1 class="message-row" id="row-2">HAB DICH LIEB</h1>
-            <h1 class="message-row" id="row-3">TSCHÜSS</h1>
-        </div>
-    </div>
-
+        <div class="pagination" id="pagination" aria-label="Photo pagination"></div>
+      </section>
+    </main>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
