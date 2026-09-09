@@ -21,6 +21,8 @@
         </div>
       </section>
       <section class="screen game-screen" id="game-screen" aria-label="Tic-tac-toe" hidden>
+        <div class="game-content">
+          <p class="game-status" id="game-status" aria-live="polite">Your turn — make a line of three hearts.</p>
         <div class="board" id="board" aria-label="Tic-tac-toe board" role="grid">
           <button class="cell" type="button" role="gridcell" aria-label="Top left"></button>
           <button class="cell" type="button" role="gridcell" aria-label="Top middle"></button>
@@ -31,6 +33,13 @@
           <button class="cell" type="button" role="gridcell" aria-label="Bottom left"></button>
           <button class="cell" type="button" role="gridcell" aria-label="Bottom middle"></button>
           <button class="cell" type="button" role="gridcell" aria-label="Bottom right"></button>
+        </div>
+        </div>
+      </section>
+      <section class="screen loss-screen" id="loss-screen" aria-labelledby="loss-title" hidden>
+        <div class="loss-card">
+          <p id="loss-title">Pech im Spiel, Glück in der Liebe! ♡</p>
+          <button id="play-again" type="button">Play again</button>
         </div>
       </section>
       <section class="screen gallery-screen" id="gallery-screen" aria-labelledby="gallery-title" hidden>
